@@ -14,7 +14,7 @@ def project_attn(dataset, data_type, gene_or_pathway, img_data_dir=None, save_to
 
     os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 
-    model_path = './experiments/{:s}/{:s}/{:s}/checkpoint_best.pth.tar'.format(dataset, data_type, gene_or_pathway)
+    model_path = './experiments/{:s}/{:s}/{:s}/checkpoint_30.pth.tar'.format(dataset, data_type, gene_or_pathway)
     model = AttnClassifier(2048, 2)
     model = model.cuda()
     best_checkpoint = torch.load(model_path)
@@ -52,13 +52,13 @@ def project_attn(dataset, data_type, gene_or_pathway, img_data_dir=None, save_to
         attn_weights_all[slide_name] = attn_weights_normalized
         labels[slide_name] = test_probs[slide_name]['label']
 
-    utils.project_results(data_split['test'], indices, save_dir, color=(0, 255, 0), on_thumbnail=False,
+    utils.project_results(dataset, data_split['test'], indices, save_dir, color=(0, 255, 0), on_thumbnail=False,
                           slides_probs=attn_weights_all, slides_labels=labels)
 
 
 if __name__ == '__main__':
-    dataset = 'TCGA-LIHC'
-    gene_or_pathway = 'pi3k'
-    data_type = 'pathway_expression'
+    dataset = 'TCGA-LUAD'
+    gene_or_pathway = 'TP53'
+    data_type = 'mutation'
     img_data_dir = '../data/{:s}/20x_512x512'.format(dataset)
     project_attn(dataset, data_type, gene_or_pathway, img_data_dir, save_top_weighted_patches=False)
