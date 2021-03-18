@@ -12,15 +12,29 @@ Breast carcinoma is the most common cancer among women worldwide that consists o
 
 ## Dependencies
 
-Pytorch 1.0.0
+Pytorch 1.1.0
+
+Torchvision 0.3.0
 
 openslide 3.4.1
 
 openslide-python 1.1.0
 
+numpy 1.16.4
+
 pandas 1.0.5
 
-scikit-learn 0.23.1
+scikit-image 0.15.0
+
+scikit-learn 0.21.3
+
+Pillow 6.1.0
+
+h5py 2.9.0
+
+matplotlib 2.2.2
+
+tqdm 4.32.1
 
 
 
