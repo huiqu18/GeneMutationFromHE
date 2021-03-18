@@ -1,12 +1,10 @@
 import os
-import openslide
 from openslide import open_slide
 import pandas as pd
-import numpy as np
 
 
 def main():
-    dataset = 'TCGA'
+    dataset = 'TCGA-BRCA'
     root_data_dir = '../data/{:s}'.format(dataset)
     svs_data_dir = '../data/{:s}/slides'.format(dataset)
 

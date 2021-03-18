@@ -28,7 +28,7 @@ def split_dataset(slides_list, save_dir, dataset):
     random.seed(2)
     random.shuffle(slides_list)
 
-    if dataset == 'BRCA':
+    if dataset == 'TCGA-BRCA':
         idx1, idx2 = int(0.7*N_slides), int(0.85*N_slides)
         slides_train = slides_list[:idx1]
         slides_val = slides_list[idx1:idx2]

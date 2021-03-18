@@ -7,6 +7,8 @@
     python  1-1.get_slide_data.py
     python  1-1.get_thumbnails.py
     ```
+* Remove low-quality slides and slides without date information and keep one slide per patient, 
+resulting in `slide_selection_step1.txt`
 * Read and process omics data to remove non-useful slides: extract expression and copy number variation 
 from raw data, remove slides that has no omics data.
     ```

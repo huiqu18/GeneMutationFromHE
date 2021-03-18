@@ -5,7 +5,7 @@ import math
 
 def main():
     dataset = 'TCGA-BRCA'
-    omics_data_dir = '../data/cbioportal/{:s}_tcga_pan_can_atlas_2018'.format(dataset.lower())
+    omics_data_dir = '../data/cbioportal/{:s}_tcga_pan_can_atlas_2018'.format(dataset.split('-')[1].lower())
 
     clinical_data = pd.read_csv('{:s}/data_clinical_patient.txt'.format(omics_data_dir), delimiter='\t')
     clinical_data = clinical_data.iloc[4:, :]
@@ -61,7 +61,7 @@ def print_characteristics(data, dataset):
           '\t\tN/A: {:d} ({:.1f}%)'.format(N_1, N_1/N*100, N_2, N_2/N*100, N_3, N_3/N*100, N_4, N_4/N*100,
                                            N_10, N_10/N*100, N_NA, N_NA/N*100))
 
-    if dataset == 'BRCA':
+    if dataset == 'TCGA-BRCA':
         Subtype_data = data['Subtype'].values
         N_LumA = np.sum(Subtype_data == 'BRCA_LumA')
         N_LumB = np.sum(Subtype_data == 'BRCA_LumB')
