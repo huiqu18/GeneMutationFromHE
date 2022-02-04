@@ -4,7 +4,7 @@
 ## Step 1. Slide selection
 * Get slide date and thumbnail for each slide
     ```
-    python  1-1.get_slide_data.py
+    python  1-1.get_slide_date.py
     python  1-1.get_thumbnails.py
     ```
 * Remove low-quality slides and slides without date information and keep one slide per patient, 
